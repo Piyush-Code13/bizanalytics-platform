@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: ecommerce_raw
+    database: bizanalytics-project
+    schema: ecommerce_raw
+
+    tables:
+      - name: orders
+      - name: customers
+      - name: order_items
+      - name: order_payments
+      - name: order_reviews
+      - name: products
+      - name: sellers
+      - name: geolocation

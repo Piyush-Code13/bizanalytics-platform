@@ -1,0 +1,100 @@
+[0m20:42:29.822114 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E8E336A810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E8E34A5850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E8E342DDD0>]}
+
+
+============================== 20:42:29.829754 | 533f0f53-7f9a-48a4-ace3-ddfacc3ab907 ==============================
+[0m20:42:29.829754 [info ] [MainThread]: Running with dbt=1.11.11
+[0m20:42:29.829754 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\asus\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt init ecommerce_dbt', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m20:42:29.861887 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\asus\.dbt
+[0m20:42:29.861887 [debug] [MainThread]: Starter project path: C:\Users\asus\New folder\envs\bizanalytics\Lib\site-packages\dbt\include\starter_project
+[0m20:42:29.925564 [info ] [MainThread]: 
+Your new dbt project "ecommerce_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m20:42:29.925564 [info ] [MainThread]: Setting up your profile.
+[0m20:44:26.304063 [error] [MainThread]: Encountered an error:
+
+[0m20:44:26.373903 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\asus\New folder\envs\bizanalytics\Lib\site-packages\dbt\cli\requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\New folder\envs\bizanalytics\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\New folder\envs\bizanalytics\Lib\site-packages\dbt\cli\main.py", line 488, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "C:\Users\asus\New folder\envs\bizanalytics\Lib\site-packages\dbt\task\init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "C:\Users\asus\New folder\envs\bizanalytics\Lib\site-packages\dbt\task\init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "C:\Users\asus\New folder\envs\bizanalytics\Lib\site-packages\dbt\task\init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "C:\Users\asus\New folder\envs\bizanalytics\Lib\site-packages\dbt\task\init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\New folder\envs\bizanalytics\Lib\site-packages\dbt\task\init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "C:\Users\asus\New folder\envs\bizanalytics\Lib\site-packages\click\termui.py", line 218, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\New folder\envs\bizanalytics\Lib\site-packages\click\termui.py", line 201, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m20:44:26.377922 [debug] [MainThread]: Command `dbt init` failed at 20:44:26.377922 after 116.63 seconds
+[0m20:44:26.377922 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E8E34B1E90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E8E34B1D10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E8DA5E23D0>]}
+[0m20:44:26.377922 [debug] [MainThread]: Flushing usage events
+[0m20:44:27.736347 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:44:43.218308 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021DA3EFA2D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021DA4034A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021DA3F0C710>]}
+
+
+============================== 20:44:43.218308 | be88c3ca-2e92-4c2b-8bbd-3c3004ce3154 ==============================
+[0m20:44:43.218308 [info ] [MainThread]: Running with dbt=1.11.11
+[0m20:44:43.218308 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\asus\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt init ecommerce_dbt', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m20:44:43.234188 [info ] [MainThread]: A project called ecommerce_dbt already exists here.
+[0m20:44:43.234188 [debug] [MainThread]: Command `dbt init` succeeded at 20:44:43.234188 after 0.11 seconds
+[0m20:44:43.250212 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D9B45FF90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021DA3FBD710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021DA3F0C810>]}
+[0m20:44:43.250212 [debug] [MainThread]: Flushing usage events
+[0m20:44:44.508133 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:49:32.763822 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000255E0E55090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000255E44C8710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000255E44C8810>]}
+
+
+============================== 20:49:32.779867 | 9944490a-ca78-44cd-8fad-9e2e88af112f ==============================
+[0m20:49:32.779867 [info ] [MainThread]: Running with dbt=1.11.11
+[0m20:49:32.779867 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\asus\\.dbt', 'use_colors': 'True', 'invocation_command': 'dbt init temp_project', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m20:49:32.797694 [debug] [MainThread]: Starter project path: C:\Users\asus\New folder\envs\bizanalytics\Lib\site-packages\dbt\include\starter_project
+[0m20:49:32.811240 [info ] [MainThread]: 
+Your new dbt project "temp_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m20:49:32.811240 [info ] [MainThread]: Setting up your profile.
+[0m20:52:34.052777 [info ] [MainThread]: Profile temp_project written to C:\Users\asus\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m20:52:34.052777 [debug] [MainThread]: Command `dbt init` succeeded at 20:52:34.052777 after 181.36 seconds
+[0m20:52:34.052777 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000255E2817410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000255E5848D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000255E5849190>]}
+[0m20:52:34.052777 [debug] [MainThread]: Flushing usage events
+[0m20:52:34.216062 [debug] [MainThread]: An error was encountered while trying to flush usage events

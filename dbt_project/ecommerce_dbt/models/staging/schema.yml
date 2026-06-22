@@ -1,0 +1,107 @@
+version: 2
+
+sources:
+  - name: ecommerce_raw
+    database: bizanalytics-project
+    schema: ecommerce_raw
+
+    tables:
+      - name: orders
+      - name: customers
+      - name: order_items
+      - name: order_payments
+      - name: order_reviews
+      - name: products
+      - name: sellers
+      - name: geolocation
+
+models:
+  - name: stg_customers
+    description: Cleaned customer data.
+    columns:
+      - name: customer_id
+        description: Unique identifier for customers.
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_orders
+    description: Cleaned order data.
+    columns:
+      - name: order_id
+        description: Unique identifier for orders.
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: Customer who placed the order.
+        tests:
+          - not_null
+
+  - name: stg_products
+    description: Cleaned product information.
+    columns:
+      - name: product_id
+        description: Unique identifier for products.
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_sellers
+    description: Cleaned seller information.
+    columns:
+      - name: seller_id
+        description: Unique identifier for sellers.
+        tests:
+          - unique
+          - not_null
+  - name: stg_order_items
+    description: Cleaned order item data.
+
+    columns:
+      - name: order_id
+        description: Order identifier.
+        tests:
+          - not_null
+
+      - name: product_id
+        description: Product identifier.
+        tests:
+          - not_null
+
+      - name: seller_id
+        description: Seller identifier.
+        tests:
+          - not_null
+
+
+  - name: stg_order_payments
+    description: Payment information for orders.
+
+    columns:
+      - name: order_id
+        description: Order identifier.
+        tests:
+          - not_null
+
+      - name: payment_type
+        description: Payment method used.
+
+      - name: payment_value
+        description: Payment amount.
+
+
+  - name: stg_order_reviews
+    description: Customer review information for orders.
+
+    columns:
+      - name: order_id
+        description: Order identifier.
+        tests:
+          - not_null
+
+      - name: review_score
+        description: Customer rating score.
+        tests:
+          - not_null
