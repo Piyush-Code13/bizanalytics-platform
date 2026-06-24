@@ -9,7 +9,7 @@ load_dotenv()
 api_key = os.getenv("GOOGLE_API_KEY")
 
 if not api_key:
-    st.secrets["GOOGLE_API_KEY"]
+    st.secrets["AIzaSyArxK7QpI9qZZ3dgcrLk3_20cVy8IEnuPM"]
 
 genai.configure(api_key=api_key)
 
