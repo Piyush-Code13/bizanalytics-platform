@@ -1,3 +1,4 @@
+import streamlit as st
 import google.generativeai as genai
 from prompts import BUSINESS_ANALYST_PROMPT
 from dotenv import load_dotenv
@@ -5,13 +6,14 @@ import os
 
 load_dotenv()
 
-genai.configure(
-    api_key=os.getenv("GOOGLE_API_KEY")
-)
+api_key = os.getenv("GOOGLE_API_KEY")
 
-model = genai.GenerativeModel(
-    "gemini-2.5-flash"
-)
+if not api_key:
+    api_key = st.secrets["GOOGLE_API_KEY"]
+
+genai.configure(api_key=api_key)
+
+model = genai.GenerativeModel("gemini-2.5-flash")
 
 def ask_gemini(question):
 
