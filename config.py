@@ -1,15 +1,13 @@
 from google.cloud import bigquery
 from google.oauth2 import service_account
+import streamlit as st
 
-# Path to service account key
-SERVICE_ACCOUNT_FILE = "credentials/gcp-key.json"
-
-# Your GCP project ID
+# Project ID
 PROJECT_ID = "bizanalytics-project"
 
-# Create credentials
-credentials = service_account.Credentials.from_service_account_file(
-    SERVICE_ACCOUNT_FILE
+# Read credentials from Streamlit Secrets
+credentials = service_account.Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"]
 )
 
 # BigQuery client
