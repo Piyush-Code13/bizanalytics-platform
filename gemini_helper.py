@@ -16,15 +16,17 @@ genai.configure(api_key=api_key)
 model = genai.GenerativeModel("gemini-2.5-flash")
 
 def ask_gemini(question):
+    try:
+        prompt = BUSINESS_ANALYST_PROMPT + "\n\nQuestion:\n" + question
 
-    prompt = BUSINESS_ANALYST_PROMPT + "\n\nQuestion:\n" + question
+        response = model.generate_content(prompt)
 
-    response = model.generate_content(prompt)
+        text = response.text
+        text = text.replace("```sql", "")
+        text = text.replace("```", "")
+        text = text.strip()
 
-    text = response.text
+        return text
 
-    text = text.replace("```sql", "")
-    text = text.replace("```", "")
-    text = text.strip()
-
-    return text
+    except Exception as e:
+        return f"Gemini Error: {str(e)}"
