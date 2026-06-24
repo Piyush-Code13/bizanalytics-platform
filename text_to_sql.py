@@ -1,7 +1,6 @@
 from gemini_helper import ask_gemini
 from sql_prompt import SYSTEM_PROMPT
 
-
 def generate_sql(question):
 
     prompt = f"""
@@ -25,7 +24,10 @@ Start directly with SELECT.
 
     sql_query = ask_gemini(prompt)
 
-    if "SELECT" in sql_query:
-        sql_query = sql_query[sql_query.find("SELECT"):]
+    print("Generated SQL:")
+    print(sql_query)
+
+    if "SELECT" in sql_query.upper():
+        sql_query = sql_query[sql_query.upper().find("SELECT"):]
 
     return sql_query
