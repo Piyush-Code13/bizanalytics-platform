@@ -76,7 +76,7 @@ if "history" not in st.session_state:
 # ---------------------------------------------------
 
 question = st.text_input(
-    "",
+    "Ask your business question",
     placeholder="Example: Show top 10 product categories by revenue"
 )
 
