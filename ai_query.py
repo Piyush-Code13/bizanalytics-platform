@@ -11,6 +11,11 @@ def ask_database(question):
     print("\nGenerated SQL:\n")
     print(sql_query)
 
+    if not sql_query.upper().startswith("SELECT"):
+        raise Exception(
+        f"Gemini returned invalid SQL:\n{sql_query}"
+    )
+
     df = run_query(sql_query)
 
     fig = generate_chart(df,question)
