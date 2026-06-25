@@ -16,10 +16,8 @@ genai.configure(api_key=api_key)
 model = genai.GenerativeModel("gemini-2.5-flash")
 
 
-def ask_gemini(question):
+def ask_gemini(prompt):
     try:
-        prompt = BUSINESS_ANALYST_PROMPT + "\n\nQuestion:\n" + question
-
         response = model.generate_content(prompt)
 
         text = response.text
@@ -29,6 +27,16 @@ def ask_gemini(question):
         text = text.strip()
 
         return text
+
+    except Exception as e:
+        return f"ERROR: {str(e)}"
+def ask_business_analyst(question):
+    try:
+        prompt = BUSINESS_ANALYST_PROMPT + "\n\nQuestion:\n" + question
+
+        response = model.generate_content(prompt)
+
+        return response.text
 
     except Exception as e:
         return f"ERROR: {str(e)}"
