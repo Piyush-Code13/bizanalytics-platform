@@ -4,7 +4,6 @@ A conversational BI tool for the Olist Brazilian E-Commerce dataset. Ask a busin
 
 **Live demo:** https://bizanalytics-platform.streamlit.app/
 
----
 
 ## What it does
 
@@ -14,7 +13,6 @@ A conversational BI tool for the Olist Brazilian E-Commerce dataset. Ask a busin
 4. Results render as a table and an interactive Plotly chart
 5. A written business insight (Observation → Impact → Risk → Recommendation) summarizes what the numbers mean
 
-```
 Natural language question
         ↓
 Gemini → SQL generation
@@ -26,11 +24,10 @@ Pandas DataFrame
 Plotly chart  +  Business insight
         ↓
 Streamlit UI
-```
+
 
 The underlying data warehouse is built with **dbt** on top of raw Olist tables loaded into BigQuery, so the SQL the model generates runs against modeled fact/dimension tables rather than raw CSV exports.
 
----
 
 ## Tech stack
 
@@ -44,12 +41,9 @@ The underlying data warehouse is built with **dbt** on top of raw Olist tables l
 | Frontend | Streamlit |
 | Deployment | Streamlit Community Cloud |
 
----
 
 ## Project structure
 
-```
-.
 ├── ai_dashboard.py              # Streamlit entry point (deployed)
 ├── ai_query.py                  # Orchestrates the question → SQL → chart → insight pipeline
 ├── text_to_sql.py               # Gemini-based natural language → SQL
@@ -66,32 +60,23 @@ The underlying data warehouse is built with **dbt** on top of raw Olist tables l
 
 > Note: `app.py`, `ai_dashboard2.py`, `ai_insights.py`, `business_analyst.py`, and `recommendation_engine.py` are earlier iterations / in-progress experiments and are not part of the deployed app. They're kept in the repo for reference while those features are finished.
 
----
 
 ## Running it locally
 
-```bash
+
 git clone https://github.com/Piyush-Code13/bizanalytics-platform.git
 cd bizanalytics-platform
 pip install -r requirements.txt
-```
 
 Create a `.env` file in the project root:
 
-```
 GOOGLE_API_KEY=your_gemini_api_key
-```
+
 
 You'll also need a GCP service account with BigQuery access, configured the way `bigquery_helper.py` expects (see that file for the exact credential loading method).
 
 Then run:
-
-```bash
 streamlit run ai_dashboard.py
-```
-
----
-
 ## Example questions to try
 
 - Show top 10 product categories by revenue
@@ -99,23 +84,6 @@ streamlit run ai_dashboard.py
 - Which categories have the most orders?
 - Show average review score by category
 - Which sellers generate the highest revenue?
-
----
-
-## Known limitations
-
-- Insight quality depends on Gemini's free-tier rate limits — heavy use can hit a 429 quota error (the app surfaces this as a friendly message rather than crashing)
-- KPI summary cards are computed from the most recent query result only, not a fixed dashboard-wide aggregate
-- A polished dark-theme UI variant and a few additional analytics modules (recommendation engine, standalone insights engine) are in progress — see Roadmap
-
----
-
-## Roadmap
-
-- [ ] Ship the dark-theme dashboard redesign currently sitting unused in the repo
-- [ ] Build out a real recommendation engine (currently a basic top/bottom ranking stub)
-- [ ] Add automated tests for the SQL generation and validation step
-- [ ] Clean up duplicate/legacy dashboard files into a single canonical entry point
 
 ---
 
