@@ -1,0 +1,42 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Virtual environments
+venv/
+.env/
+
+# VS Code
+.vscode/
+
+# Data
+data/
+Notebooks/
+dbt_project/logs/
+dbt_project/target/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large files
+*.zip
+*.csv
+
+# Cache
+.cache/
+pytest_cache/
