@@ -201,7 +201,7 @@ bizanalytics-platform/
 Clone the repository
 
 ```bash
-git clone https://github.com/your-username/bizanalytics-platform.git
+git clone https://github.com/Piyush-Code13/bizanalytics-platform.git
 
 cd bizanalytics-platform
 ```
