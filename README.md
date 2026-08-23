@@ -256,8 +256,6 @@ To run the project locally, configure the following before starting the applicat
 - Google Cloud Project with BigQuery enabled
 - Google Cloud Service Account JSON key
 
-These values should be stored locally and **must not** be committed to GitHub.
-
 ---
 
 # 🚀 Future Enhancements
